@@ -1,0 +1,13 @@
+# Return the Moving average of an array as input and with window size of 3.
+import numpy as np
+from numpy import convolve # Using Convolve function
+
+def movingaverage(values, window):
+    weights = np.repeat(1.0, window)/window 
+    movavg = np.convolve(values, weights, 'valid')
+    return movavg 
+
+
+x = [3, 5, 7, 2, 8, 10, 11, 65, 72, 81, 99, 100, 150]
+x_MovingAvg = movingaverage(x,3)
+print(y_MovingAvg)
